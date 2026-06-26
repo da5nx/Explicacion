@@ -21,6 +21,18 @@
             padding: 0;
         }
 
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+           color: var(--primary-dark);
+           text-decoration: underline;
+        }
+        
+
         body {
             font-family: system-ui, -apple-system, sans-serif;
             line-height: 1.5;
@@ -113,44 +125,62 @@
 <div class="container">
     <header>
         <h1>Acceso Seguro a tu NAS Doméstico</h1>
-        <p class="subtitle">Guía paso a paso para configurar e iniciar sesión en la VPN</p>
+        <p class="subtitle">Guía paso a paso crear en la VPN</p>
     </header>
 
     <main>
         <!-- PASO 1 -->
         <section class="card">
             <h2><span class="badge">Paso 1</span> Crear la Cuenta de Usuario</h2>
-            <p style="margin-bottom: 1rem;">Antes de conectar, necesitas credenciales autorizadas en el servidor del NAS:</p>
+            <p style="margin-bottom: 1rem;">Antes de conectar, necesitas crear la cuenta para identificarte</p>
             <ol>
-                <li>Accede al panel de administración de tu NAS (Synology, QNAP, TrueNAS, etc.) desde tu red local.</li>
-                <li>Dirígete al <strong>Panel de Control</strong> &gt; <strong>Usuarios y Grupos</strong>.</li>
-                <li>Haz clic en <strong>Crear Usuario</strong> e introduce el nombre y una contraseña segura.</li>
-                <li>En la pestaña de <strong>Permisos / Aplicaciones</strong>, asegúrate de marcar la casilla de verificación para permitir el acceso al servicio <strong>VPN</strong> (o Tailscale / WireGuard según uses).</li>
+                <li>Accede al siguiente enlace de <a href="https://login.tailscale.com/start" target="_blank" rel="noopener">Tailscale</a> para Registrarte</li>
+                <li>Escoje con que plataforma crearás la cuenta.</li>
+                <li>Inicia sesión con la plataforma que hayas seleccionado.<li>
+                <li>Ahora ya posees una cuenta </li>
                 <li>Guarda los cambios.</li>
             </ol>
         </section>
-
+        
         <!-- PASO 2 -->
         <section class="card">
-            <h2><span class="badge">Paso 2</span> Descargar el Cliente VPN</h2>
-            <p style="margin-bottom: 1rem;">Necesitas instalar la aplicación correspondiente en tu ordenador o teléfono móvil:</p>
-            <ul>
-                <li><strong>Si usas WireGuard / OpenVPN:</strong> Descarga la app oficial desde su web o la tienda de aplicaciones de tu dispositivo.</li>
-                <li><strong>Si usas Tailscale (Recomendado):</strong> Descarga la app de Tailscale en tu dispositivo y también instálala desde el centro de paquetes de tu NAS.</li>
-            </ul>
+            <h2><span class="badge">Paso 2</span>Acceder a la red del Nas </h2>
+            <p style="margin-bottom: 1rem;">Guía paso a paso para acceder a la red de la VPN</p>
+            <ol>
+                <li>Obtener el link de la red de VPN <strong>que vendrá con este enlace</strong> y abrirla</li>
+                <li>Te pedirá que aceptes la autorización para el acceso.</li>
+                <li>Puede que te pida iniciar sesión de nuevo, inicia y acepta la autorización</li>
+                <li>Ahora ya estás dentro de la red de VPN deseada.</li>
+            </ol>
         </section>
-
+        
         <!-- PASO 3 -->
         <section class="card">
-            <h2><span class="badge">Paso 3</span> Importar Perfil e Iniciar Sesión</h2>
+            <h2><span class="badge">Paso 3</span> Descargar el Cliente VPN</h2>
+            <p style="margin-bottom: 1rem;">Necesitas instalar la aplicación correspondiente en tu ordenador o teléfono móvil e iniciar sesión:</p>
+            <ul>
+                <li>Para usar <strong>Tailscale</strong> de forma eficaz, descarga su app correspondiente en tu dispositivo a través de la Store correspondiente (ejemplo:PlayStore).</li>
+                <li>Ahora que tienes la aplicación descargada en tu dispositivo debes iniciar sesión en ella</li>
+                <li>Pulsa en <strong>Log in</strong> para que se abra una pestaña donde podras iniciar sesión en la aplicación.</li>
+                <li>Inicia sesión con la misma plataforma con la que creaste la cuenta</li>
+                <li>Finalmente activa la VPN</li>
+            </ul>
+            <div class="note">
+                Para acceder a la red de VPN deberas descargar la aplicación de <strong>Tailscale</strong> en el dispositivo que estes usando.
+            </div>
+        </section>
+
+        <!-- PASO 4 -->
+        <section class="card">
+            <h2><span class="badge">Paso 4</span> Acceder a los enlaces</h2>
             <p style="margin-bottom: 1rem;">Sigue estos pasos fuera de casa para conectar con total seguridad:</p>
             <ol>
-                <li><strong>Obtener el archivo de configuración:</strong> Desde el panel del NAS, exporta el archivo de configuración de tu usuario (suele ser un archivo <code class="code-block" style="display:inline; padding: 2px 6px;">.ovpn</code> o <code class="code-block" style="display:inline; padding: 2px 6px;">.conf</code>).</li>
-                <li><strong>Importar en el cliente:</strong> Abre la app de la VPN en tu móvil u ordenador y selecciona "Importar archivo" o "Añadir túnel".</li>
-                <li><strong>Conectar:</strong> Pulsa el botón de conectar. Si te lo solicita, introduce el usuario y contraseña creados en el Paso 1.</li>
-            </ol>
+                <li><strong>A través de este <strong><a href="https://enlaces.thv4.qd.je/" target="_blank" rel="noopener">enlace</a></strong> accede a todas las aplicaciones disponibles del servidor</li>
+                <li><strong>Para acceder al otro servidor disponible haz click en su nombre y desciende hasta donde se encuentra <strong>Invitación del servidor</strong> y repite los pasos del Paso 2.</li>
+                <li><strong>Ahora tienes disponibles todas las aplicaciones del servidor.</li>
+                </ol>
             <div class="note">
-                <strong>💡 Comprobación rápida:</strong> Una vez conectado, intenta acceder a la IP privada de tu NAS (ej. <code style="font-family: monospace;">1192.168.1.X</code>) desde redes móviles. Si carga, ¡ya estás dentro de tu red local de forma segura!
+                <strong>Comprobación rápida:</strong> Para comprobar que estás conectado prueba a conectarte a una de las aplicaciones del servidor escogido sin conexión wifi ( solo datos )
             </div>
         </section>
     </main>
