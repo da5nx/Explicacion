@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía VPN para NAS Doméstico</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+
+        ol, ul {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+        }
+
+        strong {
+            color: #000;
+        }
+
+        .code-block {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: block;
+            overflow-x: auto;
+        }
+
+        .note {
+            background: #eff6ff;
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            border-radius: 0 6px 6px 0;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Acceso Seguro a tu NAS Doméstico</h1>
+        <p class="subtitle">Guía paso a paso para configurar e iniciar sesión en la VPN</p>
+    </header>
+
+    <main>
+        <!-- PASO 1 -->
+        <section class="card">
+            <h2><span class="badge">Paso 1</span> Crear la Cuenta de Usuario</h2>
+            <p style="margin-bottom: 1rem;">Antes de conectar, necesitas credenciales autorizadas en el servidor del NAS:</p>
+            <ol>
+                <li>Accede al panel de administración de tu NAS (Synology, QNAP, TrueNAS, etc.) desde tu red local.</li>
+                <li>Dirígete al <strong>Panel de Control</strong> &gt; <strong>Usuarios y Grupos</strong>.</li>
+                <li>Haz clic en <strong>Crear Usuario</strong> e introduce el nombre y una contraseña segura.</li>
+                <li>En la pestaña de <strong>Permisos / Aplicaciones</strong>, asegúrate de marcar la casilla de verificación para permitir el acceso al servicio <strong>VPN</strong> (o Tailscale / WireGuard según uses).</li>
+                <li>Guarda los cambios.</li>
+            </ol>
+        </section>
+
+        <!-- PASO 2 -->
+        <section class="card">
+            <h2><span class="badge">Paso 2</span> Descargar el Cliente VPN</h2>
+            <p style="margin-bottom: 1rem;">Necesitas instalar la aplicación correspondiente en tu ordenador o teléfono móvil:</p>
+            <ul>
+                <li><strong>Si usas WireGuard / OpenVPN:</strong> Descarga la app oficial desde su web o la tienda de aplicaciones de tu dispositivo.</li>
+                <li><strong>Si usas Tailscale (Recomendado):</strong> Descarga la app de Tailscale en tu dispositivo y también instálala desde el centro de paquetes de tu NAS.</li>
+            </ul>
+        </section>
+
+        <!-- PASO 3 -->
+        <section class="card">
+            <h2><span class="badge">Paso 3</span> Importar Perfil e Iniciar Sesión</h2>
+            <p style="margin-bottom: 1rem;">Sigue estos pasos fuera de casa para conectar con total seguridad:</p>
+            <ol>
+                <li><strong>Obtener el archivo de configuración:</strong> Desde el panel del NAS, exporta el archivo de configuración de tu usuario (suele ser un archivo <code class="code-block" style="display:inline; padding: 2px 6px;">.ovpn</code> o <code class="code-block" style="display:inline; padding: 2px 6px;">.conf</code>).</li>
+                <li><strong>Importar en el cliente:</strong> Abre la app de la VPN en tu móvil u ordenador y selecciona "Importar archivo" o "Añadir túnel".</li>
+                <li><strong>Conectar:</strong> Pulsa el botón de conectar. Si te lo solicita, introduce el usuario y contraseña creados en el Paso 1.</li>
+            </ol>
+            <div class="note">
+                <strong>💡 Comprobación rápida:</strong> Una vez conectado, intenta acceder a la IP privada de tu NAS (ej. <code style="font-family: monospace;">1192.168.1.X</code>) desde redes móviles. Si carga, ¡ya estás dentro de tu red local de forma segura!
+            </div>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
+                                  
