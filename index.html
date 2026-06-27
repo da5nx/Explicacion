@@ -5,119 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía VPN para NAS Doméstico</title>
     <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --bg: #f8fafc;
-            --surface: #ffffff;
-            --text: #1e293b;
-            --text-light: #64748b;
-            --border: #e2e8f0;
-        }
+        :root { --primary: #2563eb; --primary-dark: #1d4ed8; --bg: #f8fafc; --surface: #ffffff; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box;  margin: 0; padding: 0; }
 
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
+        a { color: var(--primary); text-decoration: none; font-weight: 600; }
 
-        a:hover {
-           color: var(--primary-dark);
-           text-decoration: underline;
-        }
-        
+        a:hover { color: var(--primary-dark); text-decoration: underline; }
 
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            line-height: 1.5;
-            background-color: var(--bg);
-            color: var(--text);
-            padding: 2rem 1rem;
-        }
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; background-color: var(--bg); color: var(--text); padding: 2rem 1rem; }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .container { max-width: 800px; margin: 0 auto; }
 
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+        header { text-align: center; margin-bottom: 3rem; }
 
-        h1 {
-            font-size: 2.25rem;
-            color: var(--text);
-            margin-bottom: 0.5rem;
-        }
+        h1 { font-size: 2.25rem; color: var(--text); margin-bottom: 0.5rem; }
 
-        .subtitle {
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
+        .subtitle { color: var(--text-light); font-size: 1.1rem; }
 
-        .card {
-            background: var(--surface);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-            border: 1px solid var(--border);
-        }
+        .card { background: var(--surface); padding: 2rem; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem; border: 1px solid var(--border); }
 
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+        h2 { font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
 
-        .badge {
-            background: var(--primary);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-        }
+        .badge { background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; }
 
-        ol, ul {
-            padding-left: 1.5rem;
-        }
+        ol, ul { padding-left: 1.5rem; }
 
-        li {
-            margin-bottom: 1rem;
-        }
+        li { margin-bottom: 1rem; }
 
-        strong {
-            color: #000;
-        }
+        strong { color: #000; }
 
-        .code-block {
-            background: #f1f5f9;
-            padding: 1rem;
-            border-radius: 6px;
-            font-family: monospace;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            display: block;
-            overflow-x: auto;
-        }
+        .code-block { background: #f1f5f9; padding: 1rem; border-radius: 6px; font-family: monospace; font-size: 0.9rem; margin-top: 0.5rem; display: block; overflow-x: auto; }
 
-        .note {
-            background: #eff6ff;
-            border-left: 4px solid var(--primary);
-            padding: 1rem;
-            border-radius: 0 6px 6px 0;
-            margin-top: 1rem;
-            font-size: 0.95rem;
-        }
+        .note { background: #eff6ff; border-left: 4px solid var(--primary); padding: 1rem; border-radius: 0 6px 6px 0; margin-top: 1rem; font-size: 0.95rem; }
     </style>
 </head>
 <body>
@@ -127,7 +47,6 @@
         <h1>Acceso Seguro a tu NAS Doméstico</h1>
         <p class="subtitle">Guía paso a paso crear en la VPN</p>
     </header>
-
     <main>
         <!-- PASO 1 -->
         <section class="card">
@@ -141,7 +60,6 @@
                 <li>Guarda los cambios.</li>
             </ol>
         </section>
-        
         <!-- PASO 2 -->
         <section class="card">
             <h2><span class="badge">Paso 2</span>Acceder a la red del Nas </h2>
@@ -153,23 +71,22 @@
                 <li>Ahora ya estás dentro de la red de VPN deseada.</li>
             </ol>
         </section>
-        
         <!-- PASO 3 -->
         <section class="card">
             <h2><span class="badge">Paso 3</span> Descargar el Cliente VPN</h2>
             <p style="margin-bottom: 1rem;">Necesitas instalar la aplicación correspondiente en tu ordenador o teléfono móvil e iniciar sesión:</p>
-            <ul>
+            <ol>
                 <li>Para usar <strong>Tailscale</strong> de forma eficaz, descarga su app correspondiente en tu dispositivo a través de la Store correspondiente (ejemplo:PlayStore).</li>
                 <li>Ahora que tienes la aplicación descargada en tu dispositivo debes iniciar sesión en ella</li>
                 <li>Pulsa en <strong>Log in</strong> para que se abra una pestaña donde podras iniciar sesión en la aplicación.</li>
                 <li>Inicia sesión con la misma plataforma con la que creaste la cuenta</li>
+                <li>Puede que te pida aceptar la autorización junto a un aviso de conexión con el dispositivo</li>
                 <li>Finalmente activa la VPN</li>
-            </ul>
+            </ol>
             <div class="note">
-                Para acceder a la red de VPN deberas descargar la aplicación de <strong>Tailscale</strong> en el dispositivo que estes usando.
+                Para acceder a la red de VPN deberas descargar la aplicación de <strong>Tailscale</strong> en el dispositivo que estes usando y conectarlo.
             </div>
         </section>
-
         <!-- PASO 4 -->
         <section class="card">
             <h2><span class="badge">Paso 4</span> Acceder a los enlaces</h2>
@@ -178,6 +95,7 @@
                 <li>A través de este <strong><a href="https://enlaces.thv4.qd.je/" target="_blank" rel="noopener">enlace</a></strong> accede a todas las aplicaciones disponibles del servidor</li>
                 <li>Para acceder al otro servidor disponible haz click en su nombre y desciende hasta donde se encuentra <strong>Invitación del servidor</strong> y repite los pasos del Paso 2.</li>
                 <li>Ahora tienes disponibles todas las aplicaciones del servidor.</li>
+                <li>Recuerda que la mayoría de aplicaciones necesitan una cuenta proporcionada con un nombre y un correo electrónico.</li>
                 </ol>
             <div class="note">
                 <strong>Comprobación rápida:</strong> Para comprobar que estás conectado prueba a conectarte a una de las aplicaciones del servidor escogido sin conexión wifi ( solo datos )
@@ -185,7 +103,5 @@
         </section>
     </main>
 </div>
-
 </body>
 </html>
-                                  
